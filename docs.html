@@ -41,7 +41,7 @@
                 </svg>
             </button>
         </div>
-        <div class="mobile-menu md:hidden">
+        <div class="mobile-menu hidden md:hidden">
             <div class="flex flex-col space-y-4 pt-4 pb-4">
                 <a href="/index.html#features" class="hover:text-secondary transition duration-300">Features</a>
                 <a href="#tools" class="hover:text-secondary transition duration-300">AI Tools</a>
@@ -113,6 +113,15 @@
         max-width: 1400px;
         margin: 0 auto;
         padding: 0 2rem;
+    }
+
+    /* Mobile menu styles */
+    .mobile-menu {
+        display: none;
+    }
+
+    .mobile-menu.show {
+        display: block;
     }
 </style>
 
@@ -251,5 +260,34 @@
             <p>&copy; 2024 Everything AI. All rights reserved.</p>
         </div>
     </footer>
+
+<script>
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('show');
+        });
+
+        // Add smooth scrolling for mobile menu links
+        document.querySelectorAll('.mobile-menu a[href^="/#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                
+                // If link points to another page with hash, navigate to that page
+                if (href.startsWith('/#')) {
+                    window.location.href = href;
+                }
+                
+                // Close mobile menu after clicking
+                mobileMenu.classList.remove('show');
+            });
+        });
+    });
+</script>
+
 </body>
 </html>
