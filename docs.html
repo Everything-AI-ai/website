@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everything AI - API Documentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F3E4B1',
+                        secondary: '#C6A962', 
+                        accent: '#8B7355',
+                        cream: '#FFF8E7',
+                        brown: '#5C4033',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<header class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm">
+    <nav class="container mx-auto px-6 py-3">
+        <div class="flex justify-between items-center">
+            <a href="/" class="flex items-center space-x-2">
+                <img src="logo.png" alt="Everything AI Logo" class="h-10 w-10">
+                <span class="text-2xl font-bold text-secondary">Everything AI</span>
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="/#features" class="hover:text-secondary transition duration-300">Features</a>
+                <a href="/#tools" class="hover:text-secondary transition duration-300">AI Tools</a>
+                <a href="/#about" class="hover:text-secondary transition duration-300">About</a>
+                <a href="/#join" class="hover:text-secondary transition duration-300">Join</a>
+                <a href="./docs.html" class="hover:text-secondary transition duration-300">Docs</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="mobile-menu md:hidden">
+            <div class="flex flex-col space-y-4 pt-4 pb-4">
+                <a href="/index.html#features" class="hover:text-secondary transition duration-300">Features</a>
+                <a href="#tools" class="hover:text-secondary transition duration-300">AI Tools</a>
+                <a href="#about" class="hover:text-secondary transition duration-300">About</a>
+                <a href="#join" class="hover:text-secondary transition duration-300">Join</a>
+                <a href="/docs" class="hover:text-secondary transition duration-300">Docs</a>
+            </div>
+        </div>
+    </nav>
+</header>
+<style>
+    /* Animation keyframes */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes floatIn {
+        0% {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Custom classes */
+    .doc-card {
+        animation: fadeInUp 0.6s ease-out;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .doc-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .stagger-animation > * {
+        opacity: 0;
+        animation: floatIn 0.8s ease-out forwards;
+    }
+
+    .stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+    .stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+    .stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+    .stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+    .stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+
+    /* Additional spacing and padding */
+    .doc-section {
+        padding: 4rem 0;
+        margin: 2rem 0;
+    }
+
+    .doc-header {
+        padding: 8rem 0 6rem 0;
+        margin-bottom: 4rem;
+    }
+
+    .doc-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+</style>
+
+<body class="bg-cream">
+    <header class="bg-gradient-to-r from-secondary to-brown text-white py-12">
+        <div class="container mx-auto px-6 text-center py-24">
+            <h1 class="text-4xl font-bold mb-4">Everything AI API Documentation</h1>
+            <p class="text-xl">Complete guide to Everything AI's Discord commands and features</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Image Generation -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold text-secondary mb-4">🎨 Image Generation</h2>
+                <div class="space-y-4">
+                    <div class="border-l-4 border-secondary pl-4">
+                        <h3 class="font-bold">/create_image</h3>
+                        <p class="text-gray-600">Generate AI images from text descriptions</p>
+                        <ul class="list-disc list-inside text-sm text-gray-500 mt-2">
+                            <li>Multiple AI art styles</li>
+                            <li>High-quality generation</li>
+                            <li>Image variations and edits</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Creation -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold text-secondary mb-4">🎨 Content Creation</h2>
+                <div class="space-y-4">
+                    <div class="border-l-4 border-secondary pl-4">
+                        <h3 class="font-bold">/create_website</h3>
+                        <p class="text-gray-600">Generate websites from prompts</p>
+                    </div>
+                    <div class="border-l-4 border-secondary pl-4">
+                        <h3 class="font-bold">/create_presentation</h3>
+                        <p class="text-gray-600">Create presentations on any topic</p>
+                    </div>
+                    <div class="border-l-4 border-secondary pl-4">
+                        <h3 class="font-bold">/create_document</h3>
+                        <p class="text-gray-600">Generate detailed documents</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Audio & Music -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold text-secondary mb-4">🎵 Audio & Music</h2>
+                <div class="space-y-4">
+                    <div class="border-l-4 border-secondary pl-4">
+                        <h3 class="font-bold">/generate_speech</h3>
+                        <p class="text-gray-600">Convert text to natural speech</p>
+                    </div>
+                    <div class="border-l-4 border-secondary pl-4">
+                        <h3 class="font-bold">/transcribe</h3>
+                        <p class="text-gray-600">Transcribe audio to text</p>
+                    </div>
+                    <div class="border-l-4 border-secondary pl-4">
+                        <h3 class="font-bold">/create_music</h3>
+                        <p class="text-gray-600">Generate AI music compositions</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Creation -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold text-secondary mb-4">🎬 Video Creation</h2>
+                <div class="space-y-4">
+                    <div class="border-l-4 border-secondary pl-4">
+                        <h3 class="font-bold">/generate_video</h3>
+                        <p class="text-gray-600">Create AI-generated videos</p>
+                    </div>
+                    <div class="border-l-4 border-secondary pl-4">
+                        <h3 class="font-bold">/image_to_video</h3>
+                        <p class="text-gray-600">Convert images into videos</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analysis & Search -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold text-secondary mb-4">🔍 Analysis & Search</h2>
+                <div class="space-y-4">
+                    <div class="border-l-4 border-secondary pl-4">
+                        <h3 class="font-bold">/analyze_image</h3>
+                        <p class="text-gray-600">Get detailed image analysis</p>
+                    </div>
+                    <div class="border-l-4 border-secondary pl-4">
+                        <h3 class="font-bold">/browse</h3>
+                        <p class="text-gray-600">Browse and analyze websites</p>
+                    </div>
+                    <div class="border-l-4 border-secondary pl-4">
+                        <h3 class="font-bold">/search_youtube</h3>
+                        <p class="text-gray-600">Search YouTube content</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Utilities -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold text-secondary mb-4">🎯 Utilities</h2>
+                <div class="space-y-4">
+                    <div class="border-l-4 border-secondary pl-4">
+                        <h3 class="font-bold">/translate</h3>
+                        <p class="text-gray-600">Translate text between languages</p>
+                    </div>
+                    <div class="border-l-4 border-secondary pl-4">
+                        <h3 class="font-bold">/define</h3>
+                        <p class="text-gray-600">Get word definitions</p>
+                    </div>
+                    <div class="border-l-4 border-secondary pl-4">
+                        <h3 class="font-bold">/profile</h3>
+                        <p class="text-gray-600">View your profile</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tips Section -->
+        <div class="mt-12 bg-white p-8 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold text-secondary mb-4">💡 Tips & Tricks</h2>
+            <ul class="list-disc list-inside space-y-2 text-gray-600">
+                <li>Ask follow-up questions in chat for more detailed responses</li>
+                <li>Upload images directly for analysis</li>
+                <li>Combine commands for more complex workflows</li>
+                <li>Use /help to see all available commands</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer class="bg-brown text-white py-8 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Everything AI. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
